@@ -1,16 +1,16 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-FROM jupyter/minimal-notebook
+#FROM jupyter/minimal-notebook
+FROM sechiro/minimal-notebook
 
 MAINTAINER Jupyter Project <jupyter@googlegroups.com>
 
 USER root
 
 # libav-tools for matplotlib anim
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends libav-tools && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+#RUN yum update -y && \
+#    yum -y install epel-release && \
+#    yum install -y libav-tools 
 
 USER $NB_USER
 
